@@ -1,0 +1,38 @@
+body{
+    background-color: #c5c5c5;
+}
+header{
+    background-color: #333;
+    padding: 10px;
+}
+.header--search input{
+    width: 100%;
+    background-color: #c5c5c5;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+.header--search input:focus{
+    background-color: white;
+}
+.header--logo a{
+    color: white;
+    text-decoration: none;
+}
+.header--logo a:hover{
+    color: white;
+    opacity: 0.8;
+    transition-duration: 0.3s;
+    text-decoration: none;
+}
+.item{
+    background-color: white;
+    padding: 30px;
+    margin-top: 20px;
+}
+.item img{
+    width: 100%;
+}
+.item--footer .btn{
+    margin-right: 10px;
+}
