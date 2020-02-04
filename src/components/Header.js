@@ -22,12 +22,15 @@ const useStyle = makeStyles(theme => ({
 
         }
     },
-    btn : {
+    btnContainer : {
         display : 'flex',
         alignItems : 'center',
         justifyContent : 'center',
         paddingLeft : '10px',
         paddingRight : '10px'
+    },
+    btn : {
+        width : '100%'
     }
 }));
 
@@ -44,9 +47,9 @@ const Header = () => {
                 <Grid item lg={4}>
                     <SearchInput/>
                 </Grid>
-                <Grid item lg={2} className={styles.btn}>
+                <Grid item lg={2} className={styles.btnContainer}>
                     <Link to="/favourite">
-                        <Button variant="outlined" color="primary">
+                        <Button variant="outlined" color="primary" className={styles.btn}>
                             Favourite
                         </Button>
                     </Link>
@@ -54,6 +57,6 @@ const Header = () => {
             </Grid>
         </Container>
     </AppBar>;
-}
+};
 
 export default Header;

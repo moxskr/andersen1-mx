@@ -61,7 +61,7 @@ const Item = (props) => {
                         </Button>
                     </Link>
                     {isFavourite ? <Button variant="contained" color="secondary" onClick={remove}>
-                            Remove to favourite
+                            Remove from favourite
                         </Button> :
                         <Button cvariant="contained" color="default" onClick={add}>
                             Add to favourite

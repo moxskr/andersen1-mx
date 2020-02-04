@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {setFilter} from "../actions/filter";
 import {selectFilterDate} from "../selectors";
 import {fetchDateFromLocal} from "../utils/api";
+import Typography from "@material-ui/core/Typography";
 
 const styles = {
     container : {
@@ -56,6 +57,9 @@ class FilterDate extends React.Component{
         const {classes} = this.props;
         return <Paper className={classes.container}>
             <Grid container justify="space-between">
+                <Grid item lg={12}>
+                    <Typography variant="h6">Choose date</Typography>
+                </Grid>
                 <Grid item lg={3}>
                     <TextField
                         type="date"
