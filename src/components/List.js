@@ -1,9 +1,15 @@
 import React from 'react';
 import Item from "./Item";
+import FilterDate from "./FilterDate";
+import {connect} from 'react-redux';
+import {selectFilterDate} from "../selectors";
+import {filter} from "../utils/helper";
 
-const List = ({list}) => {
-    return  <div className="list col-lg-12">
-        {!!list.length && list.map(item =>
+const List = ({list, filterDate}) => {
+    const filtered = filterDate ? filter(list, filterDate) : list;
+    return  <>
+        <FilterDate/>
+        {!!filtered.length && filtered.map(item =>
         {
             return <Item
                 key={item.show.id}
@@ -11,7 +17,11 @@ const List = ({list}) => {
                 obj={item}
             />
         })}
-    </div>
+    </>
 };
 
-export default List;
+const mapStateToProps = state => ({
+    filterDate : selectFilterDate(state)
+});
+
+export default connect(mapStateToProps)(List);

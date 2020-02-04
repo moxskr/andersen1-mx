@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchFavourite} from "../../actions/favourite";
 import {selectFavorList} from "../../selectors";
 import List from "../List";
+import Container from "@material-ui/core/Container";
 
 class Favourite extends React.Component{
     constructor(props) {
@@ -12,11 +13,10 @@ class Favourite extends React.Component{
     render() {
         return (
             <div className="favourite">
-                <div className="container">
-                    <div className="row">
-                        <List list={this.props.list}/>
-                    </div>
-                </div>
+                <Container maxWidth="lg">
+                    <List list={this.props.list}/>
+
+                </Container>
             </div>
         )
     }
