@@ -36,3 +36,16 @@ header{
 .item--footer .btn{
     margin-right: 10px;
 }
+.item-info img{
+    width: 100%;
+}
+.item-info{
+    padding: 30px;
+    background-color: white;
+}
+.item-info span{
+    font-weight: bold;
+}
+.list{
+    margin-bottom: 20px;
+}

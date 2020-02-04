@@ -24,7 +24,7 @@ const Item = (props) => {
         </div>
         <div className="col-lg-9">
             <h4>{name}</h4>
-            <p>Rating : {rating.length || 'No info'}</p>
+            <p>Rating : {rating.average || 'No info'}</p>
             <p>Genres : {!!genresList.length || 'No info'}</p>
             <ul className="genres">
                 {!!genresList.length && genresList.map(it => <li key={it}>{it}</li>)}
