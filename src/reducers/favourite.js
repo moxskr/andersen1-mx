@@ -7,7 +7,6 @@ const init = {
 export default (state = init, {type, payload}) => {
     switch (type) {
         case FETCH_FAVOURITE:
-            console.log(payload)
             return {
                 ...state,
                 favorList: payload

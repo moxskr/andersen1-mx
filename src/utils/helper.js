@@ -1,6 +1,11 @@
 export const dateFromString = str => {
-    const arr = str.split('-');
-    return new Date(Number(arr[0]), Number(arr[1]) - 1, Number(arr[2]));
+    if(str){
+        const arr = str.split('-');
+        return new Date(Number(arr[0]), Number(arr[1]) - 1, Number(arr[2]));
+    }
+    else{
+        return new Date();
+    }
 };
 
 export const filter = (arr, str) => {
