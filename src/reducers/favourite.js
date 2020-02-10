@@ -11,6 +11,11 @@ export default (state = init, {type, payload}) => {
                 ...state,
                 favorList: payload
             };
+        case ADD_TO_FAVOURITE :
+            return {
+                ...state,
+                favorList: [...state.favorList, payload]
+            };
         case DELETE_FROM_FAVOURITE:
             return {
                 ...state,

@@ -36,7 +36,7 @@ const useStyle = makeStyles(theme => ({
 
 const Header = () => {
     const styles = useStyle();
-    return <AppBar className="header" className={styles.header} position="static">
+    return <AppBar className="header" className={styles.header} position="static" data-test="component-header">
         <Container maxWidth="lg">
             <Grid container>
                 <Grid item lg={6}>
@@ -49,7 +49,7 @@ const Header = () => {
                 </Grid>
                 <Grid item lg={2} className={styles.btnContainer}>
                     <Link to="/favourite">
-                        <Button variant="outlined" color="primary" className={styles.btn}>
+                        <Button variant="outlined" color="primary" className={styles.btn} data-test="favourite-button">
                             Favourite
                         </Button>
                     </Link>

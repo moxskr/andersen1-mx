@@ -55,7 +55,7 @@ class FilterDate extends React.Component{
     };
     render() {
         const {classes} = this.props;
-        return <Paper className={classes.container}>
+        return <Paper className={classes.container} data-test="component-filter">
             <Grid container justify="space-between">
                 <Grid item lg={12}>
                     <Typography variant="h6">Choose date</Typography>
@@ -65,14 +65,15 @@ class FilterDate extends React.Component{
                         type="date"
                         value={this.state.date}
                         onChange={this.handle}
+                        data-test="date-picker"
                     />
                 </Grid>
                 <Grid item lg={3} className={classes.btn}>
                     {this.props.filterDate ?
-                        <Button variant="contained" color="secondary" onClick={this.cancel}>
+                        <Button variant="contained" color="secondary" onClick={this.cancel} data-test="cancel">
                             Cancel
                         </Button> :
-                        <Button variant="contained" color="primary" onClick={this.submit}>
+                        <Button variant="contained" color="primary" onClick={this.submit} data-test="submit">
                             Submit
                         </Button>
                     }

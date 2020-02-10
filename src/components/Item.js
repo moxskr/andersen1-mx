@@ -41,29 +41,29 @@ const Item = (props) => {
     const remove = () => {
         props.removeFromFavourite(props.obj);
     };
-    return <Paper className={styles.item}>
+    return <Paper className={styles.item} data-test="component-item">
         <Grid container>
             <Grid item lg={3} className={styles.pad}>
-                <img src={imageUrl} alt=""/>
+                <img src={imageUrl} alt="" data-test="item-image"/>
             </Grid>
             <Grid item lg={9} className={styles.pad}>
-                <Typography variant="h6">{name}</Typography>
-                <p>Rating : {rating.average || 'No info'}</p>
-                <p>Genres : {!!genresList.length || 'No info'}</p>
+                <Typography variant="h6" data-test="item-title">{name}</Typography>
+                <p data-test="item-rating">Rating : {rating.average || 'No info'}</p>
+                <p data-test="item-genres">Genres : {!!genresList.length || 'No info'}</p>
                 <ul className="genres">
                     {!!genresList.length && genresList.map(it => <li key={it}>{it}</li>)}
                 </ul>
-                <p>Premiered : {premiered}</p>
+                <p data-test="item-premiered">Premiered : {premiered}</p>
                 <div className="item--footer">
                     <Link to={`item/${id}`} className="btn btn-success">
-                        <Button variant="contained" color="primary" className={styles.btn}>
+                        <Button variant="contained" color="primary" className={styles.btn} data-test="more-information-button">
                             More information
                         </Button>
                     </Link>
-                    {isFavourite ? <Button variant="contained" color="secondary" onClick={remove}>
+                    {isFavourite ? <Button variant="contained" color="secondary" onClick={remove} data-test="remove-button">
                             Remove from favourite
                         </Button> :
-                        <Button cvariant="contained" color="default" onClick={add}>
+                        <Button cvariant="contained" color="default" onClick={add} data-test="add-button">
                             Add to favourite
                         </Button>}
                 </div>

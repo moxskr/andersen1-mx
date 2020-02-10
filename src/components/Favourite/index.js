@@ -15,7 +15,6 @@ class Favourite extends React.Component{
             <div className="favourite">
                 <Container maxWidth="lg">
                     <List list={this.props.list}/>
-
                 </Container>
             </div>
         )

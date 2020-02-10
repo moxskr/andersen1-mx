@@ -36,6 +36,7 @@ class SearchInput extends React.Component{
     render() {
         const {classes} = this.props;
         return <Input
+            data-test="component-search-input"
             className={classes.input}
             type="text"
             placeholder="Search smth..."
