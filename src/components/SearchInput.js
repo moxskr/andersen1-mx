@@ -4,6 +4,7 @@ import {setSearch} from "../actions/search";
 import {connect} from 'react-redux';
 import Input from "@material-ui/core/Input";
 import {withStyles} from "@material-ui/core/styles";
+import PropTypes from 'prop-types';
 
 const styles =  {
     input : {
@@ -45,5 +46,9 @@ class SearchInput extends React.Component{
         />
     }
 }
+
+SearchInput.propTypes = {
+    setSearch : PropTypes.func
+};
 
 export default connect(null, {setSearch})(withStyles(styles)(SearchInput));

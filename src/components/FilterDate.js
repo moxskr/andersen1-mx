@@ -8,6 +8,7 @@ import {setFilter} from "../actions/filter";
 import {selectFilterDate} from "../selectors";
 import {fetchDateFromLocal} from "../utils/api";
 import Typography from "@material-ui/core/Typography";
+import PropTypes from 'prop-types';
 
 const styles = {
     container : {
@@ -87,5 +88,10 @@ class FilterDate extends React.Component{
 const mapStateToProps = state => ({
     filterDate : selectFilterDate(state)
 });
+
+FilterDate.propTypes = {
+    filterDate : PropTypes.string,
+    setFilter : PropTypes.func,
+};
 
 export default connect(mapStateToProps, {setFilter})(withStyles(styles)(FilterDate));

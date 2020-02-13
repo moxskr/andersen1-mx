@@ -36,7 +36,7 @@ const useStyle = makeStyles(theme => ({
 
 const Header = () => {
     const styles = useStyle();
-    return <AppBar className="header" className={styles.header} position="static" data-test="component-header">
+    return <AppBar className={styles.header} position="static" data-test="component-header">
         <Container maxWidth="lg">
             <Grid container>
                 <Grid item lg={6}>

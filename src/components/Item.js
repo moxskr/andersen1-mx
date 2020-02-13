@@ -7,6 +7,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import PropTypes from 'prop-types';
 
 const useStyle = makeStyles((theme) => ({
     item : {
@@ -70,6 +71,11 @@ const Item = (props) => {
             </Grid>
         </Grid>
     </Paper>
+};
+
+Item.propTypes = {
+    item : PropTypes.object,
+    obj : PropTypes.object
 };
 
 export default connect(null, {addToFavourite, removeFromFavourite})(Item);

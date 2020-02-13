@@ -3,7 +3,6 @@ import List from "../List";
 import {connect} from "react-redux";
 import {selectList} from "../../selectors";
 import {Container} from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
 
 const Home = (props) => {
     return <section className="home">

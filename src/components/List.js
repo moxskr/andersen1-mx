@@ -4,6 +4,7 @@ import FilterDate from "./FilterDate";
 import {connect} from 'react-redux';
 import {selectFilterDate} from "../selectors";
 import {filter} from "../utils/helper";
+import PropTypes from 'prop-types';
 
 const List = ({list, filterDate}) => {
     const filtered = filterDate ? filter(list, filterDate) : list;
@@ -23,5 +24,9 @@ const List = ({list, filterDate}) => {
 const mapStateToProps = state => ({
     filterDate : selectFilterDate(state)
 });
+
+List.propTypes = {
+    filterDate : PropTypes.string
+};
 
 export default connect(mapStateToProps)(List);
