@@ -49,9 +49,9 @@ class ItemInfo extends React.Component{
                                 </Grid>
                                 <Grid item lg={9} className={classes.pad}>
                                     <Typography variant="h4" data-test="item-info-title">{name}</Typography>
-                                    <Link to={url} data-test="item-info-link">{url}</Link>
+                                    <a href={url} data-test="item-info-link">{url}</a>
                                     <p data-test="item-info-lang"><span>Language : </span>{language}</p>
-                                    <p data-test="item-info-official"><span>Official site : </span> <Link to={officialSite}>{officialSite}</Link></p>
+                                    <p data-test="item-info-official"><span>Official site : </span> <a href={officialSite}>{officialSite}</a></p>
                                     <p data-test="item-info-country"><span>Country : </span>{network ? network.country.name : 'No info'}</p>
                                     <div className="summary" data-test="item-info-summary" dangerouslySetInnerHTML={{ __html : summary}}></div>
                                     <Button variant="contained" color="secondary" onClick={this.go_back} data-test="go-back-button">
