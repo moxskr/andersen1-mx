@@ -20,6 +20,9 @@ describe('state', () => {
     beforeEach(() => {
         store = storeFactory(initState);
         moxios.install();
+        moxios.stubRequest('http://api.tvmaze.com/search/shows?q=game', {
+            response : 200
+        });
     });
     afterEach(() => {
         moxios.uninstall();
