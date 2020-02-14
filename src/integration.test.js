@@ -2,6 +2,7 @@ import {storeFactory} from "./_tests/testUtils";
 import {setSearch} from "./actions/search";
 import {setFilter} from "./actions/filter";
 import {addToFavourite} from "./actions/favourite";
+import moxios from 'moxios';
 
 describe('state', () => {
     let store;
@@ -18,14 +19,26 @@ describe('state', () => {
     };
     beforeEach(() => {
         store = storeFactory(initState);
+        moxios.install();
+    });
+    afterEach(() => {
+        moxios.uninstall();
     });
     test('list is empty if input is empty', () => {
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.respondWith({ status : 200, response : [] });
+        });
         store.dispatch(setSearch(''));
         const expectedState = initState;
         const newState = store.getState();
         expect(newState).toEqual(expectedState);
     });
     test('list in non empty if input value is equal `game`', () => {
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.respondWith({ status : 200, response : [{ score : 10, show : { title : '123' } }] });
+        });
         store.dispatch(setSearch('game'))
             .then(() => {
                 const newState = store.getState();

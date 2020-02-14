@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import {withStyles} from "@material-ui/core";
@@ -22,7 +22,7 @@ const styles = {
 
 class ItemInfo extends React.Component{
     state = {
-        filmInfo : null
+        filmInfo : null,
     };
     async componentDidMount() {
         const {id} = this.props.match.params;
@@ -53,7 +53,7 @@ class ItemInfo extends React.Component{
                                     <p data-test="item-info-lang"><span>Language : </span>{language}</p>
                                     <p data-test="item-info-official"><span>Official site : </span> <a href={officialSite}>{officialSite}</a></p>
                                     <p data-test="item-info-country"><span>Country : </span>{network ? network.country.name : 'No info'}</p>
-                                    <div className="summary" data-test="item-info-summary" dangerouslySetInnerHTML={{ __html : summary}}></div>
+                                    <div className="summary" data-test="item-info-summary" dangerouslySetInnerHTML={{__html: summary}}/>
                                     <Button variant="contained" color="secondary" onClick={this.go_back} data-test="go-back-button">
                                         Go back
                                     </Button>
