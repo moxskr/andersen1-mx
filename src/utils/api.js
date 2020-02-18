@@ -31,3 +31,11 @@ export const deleteItemFromFavourite = item => {
 export const fetchItemsFromFavourite = item => {
     return JSON.parse(localStorage.getItem('favourite-list')).map(item => ({...item, show : {...item.show, isFavourite : isItemInFavourite(item)}})) || [];
 };
+
+export const saveDateToLocal = date => {
+    localStorage.setItem('filter-date', date);
+};
+
+export const fetchDateFromLocal = () => {
+    return localStorage.getItem('filter-date');
+};

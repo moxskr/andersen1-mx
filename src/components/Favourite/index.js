@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {fetchFavourite} from "../../actions/favourite";
 import {selectFavorList} from "../../selectors";
 import List from "../List";
+import Container from "@material-ui/core/Container";
+import PropTypes from 'prop-types';
 
 class Favourite extends React.Component{
     constructor(props) {
@@ -12,11 +14,9 @@ class Favourite extends React.Component{
     render() {
         return (
             <div className="favourite">
-                <div className="container">
-                    <div className="row">
-                        <List list={this.props.list}/>
-                    </div>
-                </div>
+                <Container maxWidth="lg">
+                    <List list={this.props.list}/>
+                </Container>
             </div>
         )
     }
@@ -25,5 +25,10 @@ class Favourite extends React.Component{
 const mapStateToProps = state => ({
     list : selectFavorList(state)
 });
+
+Favourite.propTypes = {
+    fetchFavourite : PropTypes.func,
+    list : PropTypes.array
+};
 
 export default connect(mapStateToProps, {fetchFavourite}) (Favourite);

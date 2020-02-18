@@ -2,6 +2,18 @@ import React from 'react';
 import {fetchFromLocal} from "../utils/api";
 import {setSearch} from "../actions/search";
 import {connect} from 'react-redux';
+import Input from "@material-ui/core/Input";
+import {withStyles} from "@material-ui/core/styles";
+import PropTypes from 'prop-types';
+
+const styles =  {
+    input : {
+        padding : '5px',
+        backgroundColor : '#fff',
+        borderRadius : '4px',
+        width : '100%'
+    }
+};
 
 class SearchInput extends React.Component{
     constructor(props) {
@@ -23,7 +35,10 @@ class SearchInput extends React.Component{
         })
     };
     render() {
-        return <input
+        const {classes} = this.props;
+        return <Input
+            data-test="component-search-input"
+            className={classes.input}
             type="text"
             placeholder="Search smth..."
             value={this.state.text}
@@ -32,4 +47,8 @@ class SearchInput extends React.Component{
     }
 }
 
-export default connect(null, {setSearch})(SearchInput);
+SearchInput.propTypes = {
+    setSearch : PropTypes.func
+};
+
+export default connect(null, {setSearch})(withStyles(styles)(SearchInput));
