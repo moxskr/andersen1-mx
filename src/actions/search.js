@@ -1,7 +1,7 @@
 import { saveToLocal } from "../utils/api";
 import {FETCH_BY_SEARCH_ERROR, FETCH_BY_SEARCH_REQUEST, FETCH_BY_SEARCH_SUCCESS} from "../actionTypes";
 
-export const setSearch = text => async dispatch => {
+export const setSearch = text => async (dispatch) => {
     dispatch({
         type : FETCH_BY_SEARCH_REQUEST
     });
